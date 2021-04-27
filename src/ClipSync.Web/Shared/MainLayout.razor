@@ -1,7 +1,32 @@
 ﻿@inherits LayoutComponentBase
 
-<NavMenu />
+<div >
+    <MatAppBarContainer>
+        <MatAppBar Fixed="true">
+            <MatAppBarRow>
+                <MatAppBarSection>
+                    <MatIconButton Icon="menu" @onclick="ToggleNavMenu"></MatIconButton>
+                    <MatAppBarTitle>ClipSync</MatAppBarTitle>
+                </MatAppBarSection>
+            </MatAppBarRow>
+        </MatAppBar>
 
-<div class="mat-layout-grid">
-    @Body
+        <MatDrawer @bind-Opened="@Opened" Mode="@MatDrawerMode.Modal">
+                    Drawer Content
+         </MatDrawer>
+
+        <MatAppBarContent>
+            @Body
+        </MatAppBarContent>
+    </MatAppBarContainer>
 </div>
+
+
+@code {
+    private bool Opened = false;
+
+    private void ToggleNavMenu()
+    {
+        Opened = !Opened;
+    }
+}
