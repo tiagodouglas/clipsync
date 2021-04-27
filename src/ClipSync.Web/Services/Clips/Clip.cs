@@ -1,7 +1,7 @@
 using System;
 using Newtonsoft.Json;
 
-namespace ClipSync.Handler.Services.Clips
+namespace ClipSync.Services.Clips
 {
     public class Clip
     {
